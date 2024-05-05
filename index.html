@@ -80,11 +80,11 @@
         </form>
     </div>
     <script>
-        $("#submit-form").submit((e)=>{
+        ("#submit-form").submit((e)=>{
             e.preventDefault()
-            $.ajax({
+            .ajax({
                 url:"https://script.google.com/macros/s/AKfycbz24zvKGYdaz2m4OTtBLqHo3ZpXRLZjfoKFC4o5azC0IVMfF4P1I41Q9vP081avoSV5/exec",
-                data:$("#submit-form").serialize(),
+                data:("#submit-form").serialize(),
                 method:"post",
                 success:function (response){
                     alert("Form submitted successfully")
