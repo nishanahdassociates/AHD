@@ -68,7 +68,16 @@
         <input type="submit" value="Login">
     </form>
 </div>
+</div>
 
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        // Perform login validation (For demonstration purposes, I'm skipping validation)
+        // If login is successful, redirect to the specified URL
+        window.location.href = "https://nishanahdassociates.github.io/eus.thacs/";
+    });
+</script>
 
 
 </body>
